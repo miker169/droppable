@@ -1,7 +1,7 @@
-import Component from './base-component.js';
-import * as Validation from '../util/validation.js';
-import { AutoBind } from '../decorators/autobind.js';
-import { projectState } from '../state/project-state.js';
+import Component from './base-component';
+import * as Validation from '../util/validation';
+import { AutoBind } from '../decorators/autobind';
+import { projectState } from '../state/project-state';
 
 export class ProjectInput extends Component<HTMLDivElement, HTMLFormElement> {
   titleInputElement: HTMLInputElement;
@@ -68,7 +68,6 @@ export class ProjectInput extends Component<HTMLDivElement, HTMLFormElement> {
   
   @AutoBind
   private submitHandler(event: Event) {
-    debugger;
     event.preventDefault();
     const userInput = this.gatherUserInput();
     if (Array.isArray(userInput)) {
